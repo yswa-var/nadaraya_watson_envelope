@@ -75,8 +75,8 @@ ticks = pd.read_csv("100_tick.csv")
 
 companies = ticks['Symbol'].values
 selected_company = st.sidebar.selectbox("Select a company", companies)
-tim = st.sidebar.text_input("time frame ex: 1y,2y,100d,10d..")
-std = st.sidebar.text_input("Standard devation, like 5,6,7,8,9....")
+tim = "1y" #st.text_input("time frame ex: 1y,2y,100d,10d..")
+std = 8 #st.text_input("Standard devation, like 5,6,7,8,9....")
 backtest = Backtest(selected_company, tim, int(std))
 st.pyplot(plt)
 st.text(backtest.rets)
