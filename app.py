@@ -65,7 +65,6 @@ class Backtest:
         self.avg_return = "Average Return Per Trade: " + str(round((money-100)/trades,2)) + "%"
         self.win_rate = "Win Rate: " + str(round((len([x for x in profit if x > 0])/trades)*100,2)) + "%"
         plt.figure(figsize=(30,10))
-        plt.axis('off')
         plt.plot(y2,color='blue')
         plt.plot(self.src,color='black', label='close')
         for signal in buy_signals:
@@ -88,13 +87,12 @@ pro = backtest.profit # Remove extra column
 
 metrics = {
     "Total Trades": len(profits),
-    "Total Return": round(profits.iloc[-1], 2),
-    "Average Daily Return": round(profits.mean(), 2),
+    "Total Return": str(round(profits.iloc[-1],2))+"%",
+    "Average Daily Return": str(round(profits.mean(), 2))+"%",
     "Std Dev of Daily Returns": round(pro.iloc[:, 0].std(), 2),
     "Sharpe Ratio": round((backtest.profit.iloc[:, 0].mean()) / backtest.profit.iloc[:, 0].std(), 2),
     "Max Drawdown": round(profits.min(), 2),
     "Winning Trades": round(len(profits[profits > 0]), 2),
-    "Losing Trades": round(len(profits[profits < 0]), 2),
     "Profit Factor": round(abs(profits[profits > 0].sum() / 2), 2)
 }
 df = pd.DataFrame.from_dict(metrics,orient="index", columns=["Value"])
