@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import streamlit as st
 
-
-
         
 class Backtest:
     def __init__(self, symbol='ACC.NS', tim='1y', sd=9):
