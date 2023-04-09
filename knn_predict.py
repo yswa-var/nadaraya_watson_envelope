@@ -61,5 +61,5 @@ if __name__ == '__main__':
     for sym in symbols:
         prediction = Prediction.predict_next_close(sym)
         if prediction and abs(prediction[1]) > 1.0:
-            message = f"{sym}\nclosing: {prediction[0]:.2f}\nchange: {prediction[1]:.2f}%"
+            message = f"{sym}\nchange: {prediction[1]:.2f}%"
             Prediction.send_message(bot_token, bot_chatID, message)
