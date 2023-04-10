@@ -17,7 +17,7 @@ class Prediction:
     @staticmethod
     def predict_next_close(sym):
         try:
-            data = yf.download(sym, period='MAX')
+            data = yf.download(sym, period='3y')
             
             data['Close_next'] = data['Close'].shift(-1)
             data['Close_pct_change'] = data['Close_next'].pct_change() *100
