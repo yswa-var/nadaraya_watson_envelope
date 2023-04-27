@@ -86,7 +86,7 @@ pro = backtest.profit # Remove extra column
 metrics = {
     "Total Trades": len(profits),
     "Total Return": str(round(profits.iloc[-1],2))+"%",
-    "Average Daily Return": str(round(profits.mean(), 2))+"%",
+    "risk ": str(round(profits.mean(), 2))+"%",
     "Std Dev of Daily Returns": round(pro.iloc[:, 0].std(), 2),
     "Sharpe Ratio": round((backtest.profit.iloc[:, 0].mean()) / backtest.profit.iloc[:, 0].std(), 2),
     "Max Drawdown": round(profits.min(), 2),
