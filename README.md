@@ -4,4 +4,4 @@ The Watson envelope is a type of moving average calculated by taking a weighted 
 
 main file: app.py
 
-https://yash032-naradaya.hf.space/
+https://kiit8thsemprojectwhatsonbacktest.streamlit.app/
