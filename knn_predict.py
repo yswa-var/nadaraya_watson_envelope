@@ -49,7 +49,7 @@ class Prediction:
 
 
 if __name__ == '__main__':
-    
+    #aksd
     bot_token = '6111156932:AAGWg7uRvD7cwTK_UpzGcWv54MJkKWgyMoI'
     bot_chatID = '5562607566'
     today = date.today()
