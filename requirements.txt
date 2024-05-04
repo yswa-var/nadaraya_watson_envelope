@@ -3,3 +3,4 @@ numpy
 yfinance
 matplotlib
 streamlit
+plotly
