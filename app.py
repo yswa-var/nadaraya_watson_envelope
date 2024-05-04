@@ -76,7 +76,7 @@ ticks = pd.read_csv("100_tick.csv")
 clck = ticks['Symbol'].values
 selected_option = st.selectbox("Select an Stock",clck)
 st.write("You selected: ", selected_option)
-tim = "1y" #st.text_input("time frame ex: 1y,2y,100d,10d..")
+tim = "1y" #st.text_input("time frame00d,10d..")
 std = 8 #st.text_input("Standard devation, like 5,6,7,8,9....")
 backtest = Backtest(selected_option, tim, int(std))
 st.pyplot(plt)
